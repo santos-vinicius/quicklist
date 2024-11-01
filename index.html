@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quicklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="assets/logo.svg" alt="quicklist logotype">
+  </header>
+
+  <main>
+    <section>
+      <h1>Compras da semana</h1>
+    </section>
+
+    <form action="submit">
+      <input type="text" class="item-field" placeholder="Adicionar um novo item">
+      <input type="button" class="item-btn" value="Adicionar item">
+    </form>
+
+    <ul class="list">
+      <li>
+        <span >
+          <input type="checkbox" id="check" name="check">
+          Pão de forma
+        </span>
+        <button>
+          <img src="assets/delete.svg" alt="remover item">
+        </button>
+      </li>
+      <li>
+        <span >
+          <input type="checkbox" id="check" name="check">
+          Pão de forma
+        </span>
+        <button>
+          <img src="assets/delete.svg" alt="remover item">
+        </button>
+      </li>
+    </ul>
+    <footer class="show-alert">
+      <div>
+        <span>
+          <img src="assets/alert.svg" alt="ícone de alerta">
+          <p>O item foi removido da lista</p>
+        </span>
+
+        <button>
+          <img src="assets/delete-x.svg" alt="fechar alerta">
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

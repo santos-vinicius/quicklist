@@ -124,11 +124,10 @@ li {
 footer {
   width: 100%;
   display: none;
-
-
+  font: var(--label);
+  
   & div {
     display: flex;
-    
     justify-content: space-between;
 
     & span {
@@ -136,10 +135,25 @@ footer {
       gap: 0.5rem;
       align-items: center;
     }
+
+    & span img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    & button {
+      color: var;
+      border: none;
+      background: transparent;
+      margin-right: .75rem;
+    }
   }
 }
 
 .show-alert {
   display: block;
+  background-color: var(--color-danger);
+  padding: .75rem;
+  border-radius: 0.75rem;
+  color: var(--always-white);
 }
-

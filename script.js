@@ -32,4 +32,39 @@ form.onsubmit = (event) => {
 
     deleteItem(deleteBtn, itemContainer, itemsFieldset);
   }
+};
+
+function deleteItem(deleteBtn, itemContainer, itemsFieldset){
+  deleteBtn.addEventListener("click", () => {
+    itemContainer.remove();
+
+    deleteRemovedMsg();
+
+    let removedMsgWrapper = document.createElement("div");
+    let warningIcon = document.createElement("img");
+    warningIcon.setAttribute("src", "./assets/icons/warning.svg");
+
+    let deleteIcon = document.createElement("img");
+    deleteIcon.setAttribute("src", "./assets/icons/delete.svg");
+    deleteIcon.classList.add("delete");
+
+    let deleteMsg = document.createElement("span");
+    deleteMsg.tectContent = "O item foi removido da lista!";
+    removedMsgWrapper.classList.add("removed-msg");
+
+    removedMsgWrapper.append(warningIcon, deleteMsg, deleteIcon);
+    itemsFieldset.append(removedMsgWrapper);
+
+    deleteIcon.addEventListener("click", () => {
+      removedMsgWrapper.remove();
+    });
+  });
+}
+
+function deleteRemovedMsg(){
+  let removedMsg = document.querySelector(".removed-msg");
+
+  if (itemsFieldset.contains(removedMsg)){
+    removedMsg.remove();
+  }
 }

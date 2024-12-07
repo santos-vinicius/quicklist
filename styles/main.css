@@ -1,0 +1,135 @@
+header {
+  display: none;
+}
+
+.link {
+  color: var(--color-brand);
+  font: var(--link);
+  margin-block: 7.8rem 1.6rem;
+}
+
+.add-items,
+#items {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-items {
+  gap: 1.6rem;
+  margin-bottom: 4rem;
+}
+
+#items {
+  gap: 1.7rem;
+}
+
+h1 {
+  font: var(--title);
+  color: var(--content-primary);
+  margin-bottom: 4.4rem;
+}
+
+#new-item {
+  background-color: var(--background-secondary);
+  color: var(--content-tertiary);
+  padding: 1.1rem 0 1.8rem 1.1rem;
+  border: 0.2rem solid var(--border-primary);
+  font: var(--input);
+}
+
+#new-item:hover {
+  border-color: var(--border-hover);
+}
+
+#new-item:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  color: var(--content-primary);
+}
+
+#add {
+  background-color: var(--color-brand);
+  color: var(--always-white);
+  padding-block: 1.2rem;
+  border: none;
+  font: var(--label);
+  text-align: center;
+  transition: ease-in-out 0.3s;
+}
+
+#add:hover {
+  background-color: var(--color-brand-hover);
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-secondary);
+  box-shadow: 2px 2px 2px 1px rgb(218, 216, 216);
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+}
+
+.item-container:last-child {
+  margin-bottom: 3.6rem;
+}
+
+label {
+  font: var(--paragraph);
+  color: var(--content-secondary);
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.removed-msg {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  background: var(--color-danger);
+  color: var(--always-white);
+  padding: 1.2rem;
+  border-radius: 12px;
+  font: var(--label);
+  margin-block: 1.9rem 3.6rem;
+}
+
+.removed-msg img:last-child {
+  margin-left: auto;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+
+@media only screen and (min-width:992px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .9rem;
+    font-family: "Sora", sans-serif;
+    font-size: 2.7rem;
+    margin-top: 2.5rem;
+  }
+
+  .container {
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .add-items {
+    flex-direction: row;
+  }
+
+  .add-items * {
+    width: 100%;
+  }
+  
+  .add-items  button {
+    width: 40%;
+  }
+}

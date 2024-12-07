@@ -1,12 +1,12 @@
-const newItem = document.getElemtentById("new-item");
+const newItem = document.getElementById("new-item");
 const itemsFieldset = document.querySelector("#items");
 const form = document.querySelector("form");
 
 form.onsubmit = (event) => {
   event.preventDefault();
-  deleteRemovedMsg();
+    deleteRemovedMsg();
 
-  if (newItem.value === ""){
+  if (newItem.value === "") {
     alert("Adicione um item!");
   } else {
     const itemContainer = document.createElement("div");
@@ -31,16 +31,19 @@ form.onsubmit = (event) => {
     newItem.value = "";
 
     deleteItem(deleteBtn, itemContainer, itemsFieldset);
+    
   }
 };
 
-function deleteItem(deleteBtn, itemContainer, itemsFieldset){
+function deleteItem(deleteBtn, itemContainer, itemsFieldset) {
   deleteBtn.addEventListener("click", () => {
     itemContainer.remove();
 
     deleteRemovedMsg();
 
+
     let removedMsgWrapper = document.createElement("div");
+
     let warningIcon = document.createElement("img");
     warningIcon.setAttribute("src", "./assets/icons/warning.svg");
 
@@ -49,22 +52,24 @@ function deleteItem(deleteBtn, itemContainer, itemsFieldset){
     deleteIcon.classList.add("delete");
 
     let deleteMsg = document.createElement("span");
-    deleteMsg.tectContent = "O item foi removido da lista!";
+    deleteMsg.textContent = "O item foi removido da lista";
     removedMsgWrapper.classList.add("removed-msg");
 
     removedMsgWrapper.append(warningIcon, deleteMsg, deleteIcon);
-    itemsFieldset.append(removedMsgWrapper);
+    itemsFieldset.append(removedMsgWrapper);  
 
     deleteIcon.addEventListener("click", () => {
       removedMsgWrapper.remove();
     });
+
   });
 }
 
-function deleteRemovedMsg(){
-  let removedMsg = document.querySelector(".removed-msg");
+function deleteRemovedMsg() {
+   let removedMsg = document.querySelector(".removed-msg");
 
-  if (itemsFieldset.contains(removedMsg)){
-    removedMsg.remove();
-  }
+   if (itemsFieldset.contains(removedMsg)) {
+     removedMsg.remove();
+   } 
 }
+
